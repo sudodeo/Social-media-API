@@ -2,11 +2,10 @@ from fastapi import Depends, status, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-import models
-import schemas
+from . import models, schemas
 from sqlalchemy.orm import Session
-from alchemy_database import get_db
-from config import settings
+from .alchemy_database import get_db
+from .config import settings
 
 _SECRET_KEY = settings.secret_key
 ALGORITHM = settings.algorithm

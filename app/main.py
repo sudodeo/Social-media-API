@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from . import models
-from alchemy_database import engine
+from .alchemy_database import engine
 from routers import user, post, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
 
