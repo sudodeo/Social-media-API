@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-import models
+from . import models
 from alchemy_database import engine
 from routers import user, post, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,12 +8,7 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
-    "http://localhost",
-    "http://localhost:8080",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
