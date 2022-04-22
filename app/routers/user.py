@@ -1,13 +1,11 @@
-import utils
-from fastapi import FastAPI, HTTPException, status, Depends, APIRouter
-from schemas import CreateUser, ResponseUser
-from alchemy_database import engine, get_db
+from fastapi import HTTPException, status, Depends, APIRouter
 from typing import List
-import sqlalchemy.exc
-import models
-import oauth2
 from sqlalchemy.orm import Session
+import sqlalchemy.exc
 
+from ..schemas import CreateUser, ResponseUser
+from ..alchemy_database import get_db
+from .. import oauth2, models, utils
 
 
 router = APIRouter(prefix='/users', tags=['Users'])
