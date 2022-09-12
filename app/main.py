@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.get('/')
 def home():
-    return {"Hello": "World"}
+    return {"Documentation endpoint": "/docs"}
 
 
 app.include_router(auth.router)
